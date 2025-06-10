@@ -1,0 +1,51 @@
+html
+    head
+        meta(charset='UTF-8')
+        title Auction Listings Gallery
+        link(rel='stylesheet' href='css/main.css')
+    body
+        .top
+            .element
+                a.top_link(href='main') About Us
+            .element
+                a.top_link(href='gallery') Gallery
+            .element
+                a.top_link(href='../../create') Add Listing
+            .element
+                form(method='GET' action='gallery')
+                    input#query.form_element(type='text' name='query')
+                    select.form_element(name='category')
+                        option(value='all categories') All Categories
+                        option(value='furniture') Furniture
+                        option(value='painting') Painting
+                        option(value='souvenir') Souvenir
+                    input.form_element(type='submit')
+        .gallery-content
+            .gallery-table
+                table
+                    thead
+                        tr
+                            th Item Name
+                            th Top Bid Amount
+                            th Number of Bids
+                            th Auction Ends
+                            th
+                    tbody#auctionTableBody
+                        if noResults
+                            tr
+                                td(colspan="5") No listings found for the given query or category.
+                        else
+                            each item in listings
+                                tr(data-image=item.imageUrl 
+                                    data-description=item.description 
+                                    data-listing-id=item.id)
+                                    td
+                                        a(href=`listing/${item.id}`) #{item.title}
+                                    //- td $#{item.bids.reduce((max, bid) => Math.max(max, parseFloat(bid.bidAmount.replace(/,/g, ''))), 0).toFixed(2)}
+                                    td $#{item.bids.reduce((max, bid) => Math.max(max, bid.bidAmount), 0).toFixed(2)}
+                                    td #{item.bids.length}
+                                    td.timeRemaining(data-end-date=item.endDate)
+                                    td.delete
+                                        button.deleteButton Delete
+            #previewContainer.preview-container
+        script(src='/table')

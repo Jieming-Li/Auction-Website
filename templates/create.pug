@@ -1,0 +1,44 @@
+html
+    head
+        meta(charset='UTF-8')
+        title Create Auction Listing
+        link(rel='stylesheet' href='css/main.css')
+    body
+        .top
+            .element
+                a.top_link(href='main') About Us
+            .element
+                a.top_link(href='gallery') Gallery
+            .element
+                a.top_link(href='../../create') Add Listing
+            .element
+                form(method='GET' action='gallery')
+                    input#query.form_element(type='text' name='query')
+                    select.form_element(name='category')
+                        option(value='all categories') All Categories
+                        option(value='furniture') Furniture
+                        option(value='painting') Painting
+                        option(value='souvenir') Souvenir
+                    input.form_element(type='submit')
+        h1 Create Auction Listing
+        form.container(action='/create' method='POST')
+            label(for='title') Title:
+            input#title(type='text' name='title' placeholder='Enter auction title')
+            label(for='imageUrl') Image URL:
+            input#imageUrl(type='url' name='imageUrl' placeholder='Enter image URL')
+            label(for='description') Description:
+            textarea#description(name='description' placeholder='Enter auction description' rows='4')
+            label(for='category') Category:
+            select#category(name='category' onchange='showOtherCategory()')
+                option(value='') Select category
+                option(value='souvenir') Souvenir
+                option(value='furniture') Furniture
+                option(value='painting') Painting
+                option(value='other') Other
+            #otherCategory
+                label(for='otherCategoryInput') Other Category:
+                input#otherCategoryInput(type='text' name='otherCategoryInput' placeholder='Enter other category')
+            label(for='endDate') Sale End Date:
+            input#endDate(type='date' name='endDate')
+            button(type='submit') Create Listing
+        script(src='/new_listing')

@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: rgb(5, 40, 53); 
+    background-color: rgb(204, 226, 237); 
+    min-height:100vh;
+    font-size: large;
+}
+
+.main {
+    margin:8px;
+}
+
+.top {
+    display: flex;
+    background-color:rgb(58, 97, 180);
+    padding:20px;
+    justify-content: space-evenly;
+}
+
+.element {
+    flex-grow: 1;
+    font-size: xx-large;
+    text-align:center;
+}
+
+.form_element {
+    font-size: x-large;
+}
+
+.top_link {
+    background-color: rgb(91, 118, 176);
+    text-decoration: none;
+    padding:10px;
+    color: rgb(6, 55, 73);
+}
+
+a:hover{
+    background-color: rgb(72, 72, 96);
+}
+
+h1 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    font-style: normal;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+h2 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    font-style: normal;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+strong {
+    color: rgb(0, 0, 0);
+}
+
+em{
+    color: rgb(0, 0, 0);
+}
+
+.main_content {
+    display: flex;
+    justify-content:center;
+}
+
+.image_content {
+    width: 40%;
+    text-align: center;
+    margin:5px;
+}
+
+.text_content {
+    width: 40%;
+    background-color: rgb(65, 112, 156);
+    padding: 30px;
+    margin:5px;
+    font-size:30px;
+}
+
+table {
+    margin-top: 40px;;
+    margin-left: auto;
+    margin-right: auto;
+    width:90%;
+    text-align: center;
+    font-size: 45px;
+}
+
+thead {
+    background-color:rgb(58, 97, 180);
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgb(58, 97, 180); 
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgb(204, 226, 237); 
+}
+
+td > a {
+    text-decoration: none;
+    color: rgb(5, 40, 53);
+}
+
+/* .bids {
+    background-color: rgb(65, 112, 156);
+    padding: 30px;
+    margin:5px;
+    font-size:30px;
+} */
+
+.bid_image {
+    width: 45%;
+    text-align: center;
+    padding: 30px;
+}
+
+.bid_content {
+    width:45%;
+    padding: 30px;
+    font-size:30px;
+    text-align: center;
+}
+
+.image_file {
+    border:5px solid rgb(58, 97, 180);
+    
+}
+
+.bid_description {
+    background-color: rgb(230, 238, 242);
+    font-size: 30px;
+}
+
+.bid {
+    display: flex;
+    flex-wrap: wrap;
+    margin:5px;
+    padding:5px;
+    background-color: rgb(230, 238, 242);
+    border:5px;
+    border-radius: 15px;
+    font-size: 40px;
+}
+
+.bidder {
+    text-align: left;
+    width:50%;
+    font-family: "Oswald", sans-serif;
+}
+
+.amount {
+    width:50%;
+    text-align: right;
+}
+
+.container {
+    max-width: 300px;
+    margin: 0 auto;
+    padding-top: 3%;
+}
+
+.container > label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.container > input[type="text"], .container > input[type="url"], .container > input[type="date"], .container > textarea, .container > select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#otherCategory {
+    display: none;
+    margin-bottom: 15px;
+}
+
+.bidding-form {
+    display: none;
+}
+
+.countdown {
+    min-width: 120px; 
+    text-align: center; 
+}
+
+.gallery-content {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 20px;
+}
+
+.gallery-table {
+    flex: 3;
+    width: 300px;
+    padding-right: 20px;
+}
+
+.preview-container {
+    flex: 1;
+    width: 100px;
+    max-width: 100%;
+    padding: 20px;
+    object-fit: contain;
+}
+
+.preview-container img {
+    max-width: 100%;  
+    object-fit: contain;
+}
+
+/* .banner {
+    display: block;
+    height: 100px;
+    text-align: center;
+} */
+
+.delete {
+    width: 100px;
+}
+
+.deleteButton {
+    background-color: #1247cf; 
+    color: white; 
+    padding: 15px 20px; 
+    text-align: center;
+    border-radius: 8px;
+}

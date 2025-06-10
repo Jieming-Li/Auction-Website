@@ -1,0 +1,22 @@
+html
+    head
+        meta(charset='UTF-8')
+        title Successfully add listing
+        link(rel='stylesheet' href='css/main.css')
+    .top
+        .element
+            a.top_link(href='../../main') About Us
+        .element
+            a.top_link(href='../../gallery') Gallery
+        .element
+            a.top_link(href='../../create') Add Listing
+        .element
+            form(method='GET' action='../../gallery')
+            input#query.form_element(type='text' name='query')
+            select.form_element(name='category')
+                option(value='all categories') All Categories
+                option(value='furniture') Furniture
+                option(value='painting') Painting
+                option(value='souvenir') Souvenir
+            input.form_element(type='submit')
+    p Success!

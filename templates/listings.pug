@@ -1,0 +1,48 @@
+html
+    head
+        meta(charset='UTF-8')
+        title #{item.title}
+        link(rel='stylesheet' href='../css/main.css')
+    body
+        .top
+            .element
+                a.top_link(href='../main') About Us
+            .element
+                a.top_link(href='../gallery') Gallery
+            .element
+                a.top_link(href='../../create') Add Listing
+            .element
+                form(method='GET' action='../gallery')
+                    input#query.form_element(type='text' name='query')
+                    select.form_element(name='category')
+                        option(value='all categories') All Categories
+                        option(value='furniture') Furniture
+                        option(value='painting') Painting
+                        option(value='souvenir') Souvenir
+                    input.form_element(type='submit')
+        .main
+            h1 #{item.title}
+            .main_content
+                .bid_image
+                    img.image_file(src=item.imageUrl alt=item.description)
+                    p.bid_description #{item.description}
+                .bid_content
+                    h2 Bids
+                    button#bidButton(onclick='showBidForm()') Place Bid
+                    .bids
+                        #biddingForm.bidding-form
+                            input#auctionId(type='hidden' name='auctionId' value=item.id)
+                            label(for='bidderName') Name:
+                            input#bidderName(type='text' name='bidderName' required='' value=bidderName || '')
+                            label(for='bidAmount') Bid Amount:
+                            input#bidAmount(type='number' name='bidAmount' step='100' required='')
+                            label(for='bidComment') Comment:
+                            textarea#bidComment(name='bidComment' placeholder='Enter your comment here...' rows='4')
+                            button#submitBidButton(onclick='submitBid()') Submit Bid
+                        each bid in item.bids
+                            .bid
+                                span.bidder #{bid.name}
+                                span.amount $#{bid.bidAmount}
+                                if bid.comment
+                                    p #{bid.comment}
+    script(src='/bid')

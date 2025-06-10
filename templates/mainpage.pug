@@ -1,0 +1,42 @@
+html
+    head
+        meta(charset='UTF-8')
+        title Luther Auctions
+        link(rel='stylesheet' href='css/main.css')
+    body
+        .top
+            .element
+                a.top_link(href='main') About Us
+            .element
+                a.top_link(href='gallery') Gallery
+            .element
+                a.top_link(href='../../create') Add Listing
+            .element
+                form(method='GET' action='gallery')
+                    input#query.form_element(type='text' name='query')
+                    select.form_element(name='category')
+                        option(value='all categories') All Categories
+                        option(value='furniture') Furniture
+                        option(value='painting') Painting
+                        option(value='souvenir') Souvenir
+                    input.form_element(type='submit')
+        .main
+            h1 Luther Auctions
+            h2 Your gateway to rare antique and estate
+            .main_content
+                img.image_content(src='images/main_image.jpg' alt='Original Helen Frankenthaler signed acrylic & crayon on paper')
+                .text_content
+                    p
+                        | Welcom friend! Luther Auctions is a full service family-owned and operated auction company with over 
+                        strong 40 years
+                        |  of 
+                        em antique and estate
+                        |  experience. We handle quality consignments ranging from individual items to full estates.
+                    p Here is a list of our specialty:
+                    ul
+                        li fine antiques
+                        li mid-century modern, original artworks
+                        li fine jewelry
+                        li weapons
+                    p
+                        | Our friendly staff is the most knowledgeable in the business. Located North St. Paul, we are Minnesota&rsquo;s largest weekly live auction house. Our success is a result of continuously providing quality merchandise to our dedicated bidder base which includes dealers and collectors from across the country.
